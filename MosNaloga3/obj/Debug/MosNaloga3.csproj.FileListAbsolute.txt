@@ -1,0 +1,10 @@
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\bin\Debug\MosNaloga3.exe.config
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\bin\Debug\MosNaloga3.exe
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\bin\Debug\MosNaloga3.pdb
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\obj\Debug\MosNaloga3.csprojAssemblyReference.cache
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\obj\Debug\MosNaloga3.Properties.Resources.resources
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\obj\Debug\MosNaloga3.csproj.GenerateResource.cache
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\obj\Debug\MosNaloga3.csproj.CoreCompileInputs.cache
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\obj\Debug\MosNaloga3.exe
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\obj\Debug\MosNaloga3.pdb
+C:\Users\jure\source\repos\MosNaloga3\MosNaloga3\obj\Debug\MosNaloga3.Drevo.resources
