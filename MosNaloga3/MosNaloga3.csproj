@@ -52,6 +52,7 @@
     <Compile Include="Drevo.Designer.cs">
       <DependentUpon>Drevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParentNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Drevo.resx">

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,9 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MosNaloga3
+
 {
+    
+    
     public partial class Drevo : Form
     {
+        List <ParentNode> starsi = new List <ParentNode>();
+
         public Drevo()
         {
             InitializeComponent();
@@ -62,5 +68,14 @@ namespace MosNaloga3
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ParentNode vozlisce = new ParentNode(textBox1.Text);
+
+            treeView.Nodes.Add(vozlisce.ime.ToString());
+            comboBox1.Items.Add(vozlisce.ime.ToString());
+            starsi.Add(vozlisce);
+                
+        }
     }
 }
