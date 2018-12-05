@@ -32,12 +32,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeView2 = new System.Windows.Forms.TreeView();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +71,18 @@
             this.flowLayoutPanel2.TabIndex = 1;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(338, 52);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Odločitveno drevo";
+            this.label1.Click += new System.EventHandler(this.label1_Click_3);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -83,52 +93,20 @@
             this.panel4.Size = new System.Drawing.Size(1200, 100);
             this.panel4.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 52);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Odločitveno drevo";
-            this.label1.Click += new System.EventHandler(this.label1_Click_3);
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.treeView1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.treeView2);
             this.panel2.Location = new System.Drawing.Point(0, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1200, 629);
             this.panel2.TabIndex = 4;
             // 
-            // button1
+            // treeView2
             // 
-            this.button1.Location = new System.Drawing.Point(568, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(980, 324);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(22, 168);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(344, 451);
-            this.treeView1.TabIndex = 2;
+            this.treeView2.Location = new System.Drawing.Point(12, 7);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(329, 612);
+            this.treeView2.TabIndex = 3;
             // 
             // Drevo
             // 
@@ -163,9 +141,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeView2;
     }
 }
 
