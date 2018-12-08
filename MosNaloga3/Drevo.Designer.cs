@@ -35,6 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.shrani = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,10 +47,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.treeView = new System.Windows.Forms.TreeView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -104,6 +108,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.shrani);
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label6);
@@ -118,6 +125,32 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1310, 629);
             this.panel2.TabIndex = 4;
+            // 
+            // shrani
+            // 
+            this.shrani.Location = new System.Drawing.Point(364, 152);
+            this.shrani.Name = "shrani";
+            this.shrani.Size = new System.Drawing.Size(75, 23);
+            this.shrani.TabIndex = 18;
+            this.shrani.Text = "shrani";
+            this.shrani.UseVisualStyleBackColor = true;
+            this.shrani.Click += new System.EventHandler(this.shrani_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(364, 236);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(451, 325);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(667, 67);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(121, 22);
+            this.textBox2.TabIndex = 16;
             // 
             // button2
             // 
@@ -147,9 +180,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(983, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(315, 29);
+            this.label5.Size = new System.Drawing.Size(241, 29);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Dodajanje končnih vozlišč";
+            this.label5.Text = "Dodajanje alternativ";
             // 
             // label4
             // 
@@ -203,17 +236,20 @@
             // 
             // treeView
             // 
+            this.treeView.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.treeView.Location = new System.Drawing.Point(54, 34);
             this.treeView.Name = "treeView";
             this.treeView.Size = new System.Drawing.Size(233, 355);
             this.treeView.TabIndex = 4;
             // 
-            // textBox2
+            // comboBox1
             // 
-            this.textBox2.Location = new System.Drawing.Point(667, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 22);
-            this.textBox2.TabIndex = 16;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(364, 200);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 19;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // Drevo
             // 
@@ -237,6 +273,7 @@
             this.flowLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,6 +296,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button shrani;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

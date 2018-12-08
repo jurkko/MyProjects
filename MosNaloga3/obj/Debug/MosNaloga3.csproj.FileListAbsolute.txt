@@ -18,3 +18,13 @@ C:\Users\jure\Desktop\Nova mapa\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.pdb
 C:\Users\jure\Desktop\Nova mapa\MyProjects\MosNaloga3\bin\Debug\MosNaloga3.exe.config
 C:\Users\jure\Desktop\Nova mapa\MyProjects\MosNaloga3\bin\Debug\MosNaloga3.exe
 C:\Users\jure\Desktop\Nova mapa\MyProjects\MosNaloga3\bin\Debug\MosNaloga3.pdb
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.csprojAssemblyReference.cache
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.Drevo.resources
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.Properties.Resources.resources
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.csproj.GenerateResource.cache
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.csproj.CoreCompileInputs.cache
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.exe
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\obj\Debug\MosNaloga3.pdb
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\bin\Debug\MosNaloga3.exe.config
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\bin\Debug\MosNaloga3.exe
+C:\Users\jure\Desktop\MOS3\MyProjects\MosNaloga3\bin\Debug\MosNaloga3.pdb
