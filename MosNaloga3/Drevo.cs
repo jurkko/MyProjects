@@ -16,7 +16,7 @@ namespace MosNaloga3
     
     public partial class Drevo : Form
     {
-        List <ParentNode> starsi = new List <ParentNode>();
+        List <Stars> starsi = new List <Stars>();
 
         public Drevo()
         {
@@ -70,12 +70,33 @@ namespace MosNaloga3
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ParentNode vozlisce = new ParentNode(textBox1.Text);
+            Stars vozlisce = new Stars(textBox1.Text);
 
             treeView.Nodes.Add(vozlisce.ime.ToString());
-            comboBox1.Items.Add(vozlisce.ime.ToString());
+            
             starsi.Add(vozlisce);
-                
+          
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+
+           
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            Stars vozlisce2 = new Stars(textBox2.Text);
+            
+            treeView.SelectedNode.Nodes.Add(vozlisce2.ime.ToString());
+            treeView.ExpandAll();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
