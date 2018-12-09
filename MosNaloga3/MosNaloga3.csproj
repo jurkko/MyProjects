@@ -52,6 +52,7 @@
     <Compile Include="Drevo.Designer.cs">
       <DependentUpon>Drevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stars.cs" />

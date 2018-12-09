@@ -35,8 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.shrani = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.podatki = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,12 +47,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.treeView = new System.Windows.Forms.TreeView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dreva = new System.Windows.Forms.TreeView();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.podatki)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -110,7 +110,7 @@
             // 
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.shrani);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.podatki);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label6);
@@ -120,11 +120,20 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.treeView);
+            this.panel2.Controls.Add(this.dreva);
             this.panel2.Location = new System.Drawing.Point(0, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1310, 629);
             this.panel2.TabIndex = 4;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(364, 200);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 19;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // shrani
             // 
@@ -136,14 +145,15 @@
             this.shrani.UseVisualStyleBackColor = true;
             this.shrani.Click += new System.EventHandler(this.shrani_Click);
             // 
-            // dataGridView1
+            // podatki
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(364, 236);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(451, 325);
-            this.dataGridView1.TabIndex = 17;
+            this.podatki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.podatki.Location = new System.Drawing.Point(364, 236);
+            this.podatki.Name = "podatki";
+            this.podatki.RowTemplate.Height = 24;
+            this.podatki.Size = new System.Drawing.Size(546, 369);
+            this.podatki.TabIndex = 17;
+            this.podatki.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox2
             // 
@@ -234,22 +244,13 @@
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 5;
             // 
-            // treeView
+            // dreva
             // 
-            this.treeView.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.treeView.Location = new System.Drawing.Point(54, 34);
-            this.treeView.Name = "treeView";
-            this.treeView.Size = new System.Drawing.Size(233, 355);
-            this.treeView.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(364, 200);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 19;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.dreva.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dreva.Location = new System.Drawing.Point(54, 34);
+            this.dreva.Name = "dreva";
+            this.dreva.Size = new System.Drawing.Size(233, 355);
+            this.dreva.TabIndex = 4;
             // 
             // Drevo
             // 
@@ -273,7 +274,7 @@
             this.flowLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.podatki)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,14 +290,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TreeView treeView;
+        private System.Windows.Forms.TreeView dreva;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView podatki;
         private System.Windows.Forms.Button shrani;
         private System.Windows.Forms.ComboBox comboBox1;
     }

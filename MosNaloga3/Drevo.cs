@@ -80,7 +80,7 @@ namespace MosNaloga3
             {
                 glavni.ime=(textBox1.Text);
                 
-                treeView.Nodes.Add(glavni.ime.ToString());
+                dreva.Nodes.Add(glavni.ime.ToString());
                 //starsi.Add(glavni);
                 
                 a++;
@@ -103,27 +103,28 @@ namespace MosNaloga3
         {
             Stars vozlisce = new Stars(textBox2.Text,0);
             
-            treeView.SelectedNode.Nodes.Add(vozlisce.ime.ToString());
+            dreva.SelectedNode.Nodes.Add(vozlisce.ime.ToString());
 
-            if (treeView.SelectedNode.Level == 0)
+            if (dreva.SelectedNode.Level == 0)
             {
                 glavni.otroci.Add(vozlisce);
             }
-            else if (treeView.SelectedNode.Level==1)
+            else if (dreva.SelectedNode.Level==1)
             {
-                int a =treeView.SelectedNode.Index;
+                int a =dreva.SelectedNode.Index;
                 glavni.otroci[a].otroci.Add(vozlisce);
                 
             }
             else
             {
-                int b = treeView.SelectedNode.Index;
-                //int b = treeView.SelectedNode.Index;
-                //treeView.SelectedNode.
+                int b = dreva.SelectedNode.Index;
+                int c =dreva.SelectedNode.Parent.Index;
+                glavni.otroci[c].otroci[b].otroci.Add(vozlisce);
+              
             }
-            treeView.ExpandAll();
+            dreva.ExpandAll();
            
-
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,19 +135,35 @@ namespace MosNaloga3
         private void shrani_Click(object sender, EventArgs e)
         {
 
-            
+            DataTable lol=Metode.ConvertToDataTable(glavni.otroci);
 
-            
-            int m = treeView.SelectedNode.Index;
+            var test = new DataTable();
+            test.Columns.Add(" ");
+            for(int i = 0; i < glavni.otroci.Count; i++)
+            {
+                test.Columns.Add(glavni.otroci[i].ime.ToString());
+                test.Rows.Add(glavni.otroci[i].ime.ToString());
+            }
+
+            podatki.DataSource = test;
+
+
+
+            int m = dreva.SelectedNode.Index;
             int g=glavni.otroci[m].otroci.Count();
             MessageBox.Show(g.ToString());
 
-           
+            
         }
         
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
