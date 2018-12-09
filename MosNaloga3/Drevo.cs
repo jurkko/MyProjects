@@ -16,8 +16,12 @@ namespace MosNaloga3
     
     public partial class Drevo : Form
     {
+        
+        List <Stars> vozlisca = new List<Stars>();
         List <Stars> starsi = new List <Stars>();
+        Stars glavni = new Stars(null,0);
         int a = 0;
+      
         public Drevo()
         {
             InitializeComponent();
@@ -74,10 +78,11 @@ namespace MosNaloga3
 
             if (a < 1)
             {
-
-                Stars vozlisce = new Stars(textBox1.Text);
-                treeView.Nodes.Add(vozlisce.ime.ToString());
-                starsi.Add(vozlisce);
+                glavni.ime=(textBox1.Text);
+                
+                treeView.Nodes.Add(glavni.ime.ToString());
+                //starsi.Add(glavni);
+                
                 a++;
             }
             else
@@ -96,9 +101,26 @@ namespace MosNaloga3
 
         private void button2_Click_2(object sender, EventArgs e)
         {
-            Stars vozlisce = new Stars(textBox2.Text);
+            Stars vozlisce = new Stars(textBox2.Text,0);
             
             treeView.SelectedNode.Nodes.Add(vozlisce.ime.ToString());
+
+            if (treeView.SelectedNode.Level == 0)
+            {
+                glavni.otroci.Add(vozlisce);
+            }
+            else if (treeView.SelectedNode.Level==1)
+            {
+                int a =treeView.SelectedNode.Index;
+                glavni.otroci[a].otroci.Add(vozlisce);
+                
+            }
+            else
+            {
+                int b = treeView.SelectedNode.Index;
+                //int b = treeView.SelectedNode.Index;
+                //treeView.SelectedNode.
+            }
             treeView.ExpandAll();
            
 
@@ -111,12 +133,20 @@ namespace MosNaloga3
 
         private void shrani_Click(object sender, EventArgs e)
         {
-             
+
+            
+
+            
+            int m = treeView.SelectedNode.Index;
+            int g=glavni.otroci[m].otroci.Count();
+            MessageBox.Show(g.ToString());
+
+           
         }
         
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
