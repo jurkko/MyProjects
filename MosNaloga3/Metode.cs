@@ -25,6 +25,8 @@ namespace MosNaloga3
             return nova;
         }
 
+
+
         public static double [] preberi(DataTable x, int i)
         {
             double [] y = new double[i];
@@ -66,9 +68,10 @@ namespace MosNaloga3
 
         }
 
-
-
-
+        internal static void napolnitabelo(DataTable x)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

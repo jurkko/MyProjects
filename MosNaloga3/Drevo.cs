@@ -136,23 +136,33 @@ namespace MosNaloga3
 
         private void shrani_Click(object sender, EventArgs e)
         {
-           
-           
-            test.Columns.Add(" ");
-            test.Columns[0].ReadOnly = true;
-            for (int i = 0; i < glavni.otroci.Count; i++)
-            {
-                test.Columns.Add(glavni.otroci[i].ime.ToString());
-                test.Rows.Add(glavni.otroci[i].ime.ToString());
-                test.Rows[i][i+1] = 1;
-                stevec++;
-                
-                
-            }
 
+            if (stevec == 0)
+            {
+                test.Columns.Add(" ");
+                test.Columns[0].ReadOnly = true;
+                for (int i = 0; i < glavni.otroci.Count; i++)
+                {
+                    test.Columns.Add(glavni.otroci[i].ime.ToString());
+                    test.Rows.Add(glavni.otroci[i].ime.ToString());
+                    test.Rows[i][i + 1] = 1;
+
+
+
+                }
+                podatki.DataSource = test;
+                stevec++;
+            }
             
-             
-            podatki.DataSource = test;
+            else if (stevec == 1)
+            {
+                for(int i = 0; i < glavni.otroci.Count; i++)
+                {
+                    Metode.napolnitabelo(glavni.otroci[i].otroci);
+                }
+                Metode.napolnitabelo();
+                stevec++;
+            }
             
 
 
