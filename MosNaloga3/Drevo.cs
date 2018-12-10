@@ -134,26 +134,29 @@ namespace MosNaloga3
 
         private void shrani_Click(object sender, EventArgs e)
         {
-
-            DataTable lol=Metode.ConvertToDataTable(glavni.otroci);
-
+            int stevec = 0;
             var test = new DataTable();
             test.Columns.Add(" ");
+
             for(int i = 0; i < glavni.otroci.Count; i++)
             {
                 test.Columns.Add(glavni.otroci[i].ime.ToString());
                 test.Rows.Add(glavni.otroci[i].ime.ToString());
+                test.Rows[i][i+1] = 1;
+                stevec++;
+                test.Columns[i+1].ReadOnly = true;
+                
             }
 
-            podatki.DataSource = test;
-
-
-
-            int m = dreva.SelectedNode.Index;
-            int g=glavni.otroci[m].otroci.Count();
-            MessageBox.Show(g.ToString());
-
             
+             // Metode.dopolni(test, stevec);
+            podatki.DataSource = test;
+            Metode.preberi(test, stevec);
+
+
+
+
+
         }
         
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -164,6 +167,11 @@ namespace MosNaloga3
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            
         }
     }
 }

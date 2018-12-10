@@ -11,60 +11,52 @@ namespace MosNaloga3
     class Metode
     {
 
-        public static DataTable ConvertTo<T>(IList<T> list)
+
+        public static DataTable dopolni(DataTable x, int i)
         {
-            DataTable table = CreateTable<T>();
-            Type entityType = typeof(T);
-            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(entityType);
+            DataTable nova = new DataTable();
 
-            foreach (T item in list)
+            int meja = 5;
+            for (int a = 0; a < 5; a++)
             {
-                DataRow row = table.NewRow();
 
-                foreach (PropertyDescriptor prop in properties)
+            }
+
+            return nova;
+        }
+
+        public static List<double> preberi(DataTable x, int i)
+        {
+                 List<double> y = new List<double>();
+
+                foreach (DataRow row in x.Rows)
                 {
-                    row[prop.Name] = prop.GetValue(item);
+                    if (x.Rows.IndexOf(row) != 0)
+                    {
+                        //loop all the columns in the row
+                        for (int a = 1; a < x.Columns.Count; a++)
+                        {
+                        //add the values for each cell to the total
+                         
+                            y[a+1] += Convert.ToDouble(row[x.Columns[a+1].ColumnName]);
+                        }
+                    }
+
                 }
-
-                table.Rows.Add(row);
-            }
-
-            return table;
-        }
+        
 
 
-        public static DataTable CreateTable<T>()
-        {
-            Type entityType = typeof(T);
-            DataTable table = new DataTable(entityType.Name);
-            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(entityType);
-
-            foreach (PropertyDescriptor prop in properties)
-            {
-                // HERE IS WHERE THE ERROR IS THROWN FOR NULLABLE TYPES
-                table.Columns.Add(prop.Name, prop.PropertyType);
-            }
-
-            return table;
-        }
-
-
-        public static DataTable ConvertToDataTable<T>(IList<T> data)
-        {
-            PropertyDescriptorCollection properties =
-               TypeDescriptor.GetProperties(typeof(T));
-            DataTable table = new DataTable();
-            foreach (PropertyDescriptor prop in properties)
-                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-            foreach (T item in data)
-            {
-                DataRow row = table.NewRow();
-                foreach (PropertyDescriptor prop in properties)
-                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
-                table.Rows.Add(row);
-            }
-            return table;
+            return y;
 
         }
+
+
+
+
     }
+
 }
+
+        
+    
+
