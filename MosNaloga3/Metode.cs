@@ -25,11 +25,12 @@ namespace MosNaloga3
             return nova;
         }
 
-        public static List<double> preberi(DataTable x, int i)
+        public static double [] preberi(DataTable x, int i)
         {
-                 List<double> y = new List<double>(i);
+            double [] y = new double[i];
 
-                for (int m =1;m<x.Rows.Count;m++)
+            int stevec = 0;
+                for (int m =1;m<=x.Rows.Count;m++)
                 {
                     
                     
@@ -41,10 +42,10 @@ namespace MosNaloga3
                         {
                         
                        
-                         double v = Convert.ToDouble(x.Rows[m][a]);
+                         double v = Convert.ToDouble(x.Rows[a-1][m]);
                          skupaj += v;
 
-                            if (a == x.Columns.Count-1)
+                            if (a+1 == x.Columns.Count)
                             {
                                 skupaj = skupaj / a;
                             }
@@ -52,7 +53,9 @@ namespace MosNaloga3
                          
 
                         }
-                    y[m-1] = skupaj;
+                    
+                    y[stevec] = skupaj;
+                    stevec++;
                 }
 
                 

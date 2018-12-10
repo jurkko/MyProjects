@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace MosNaloga3
 
 {
-    
+
     
     public partial class Drevo : Form
     {
@@ -137,7 +137,7 @@ namespace MosNaloga3
         private void shrani_Click(object sender, EventArgs e)
         {
            
-           // DataTable test = new DataTable(); 
+           
             test.Columns.Add(" ");
             test.Columns[0].ReadOnly = true;
             for (int i = 0; i < glavni.otroci.Count; i++)
@@ -151,9 +151,9 @@ namespace MosNaloga3
             }
 
             
-             // Metode.dopolni(test, stevec);
+             
             podatki.DataSource = test;
-            //Metode.preberi(test, stevec);
+            
 
 
 
@@ -173,7 +173,13 @@ namespace MosNaloga3
 
         private void button3_Click_2(object sender, EventArgs e)
         {
-            Metode.preberi(test, stevec);
+            //Metode.preberi(test, stevec);
+            double[] m = Metode.preberi(test, stevec);
+
+            for(int i = 0; i < m.Length; i++)
+            {
+                glavni.otroci[i].vrednost = m[i];
+            }
         }
     }
 }
