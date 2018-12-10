@@ -21,7 +21,9 @@ namespace MosNaloga3
         List <Stars> starsi = new List <Stars>();
         Stars glavni = new Stars(null,0);
         int a = 0;
-      
+        int stevec = 0;
+        DataTable test = new DataTable();
+
         public Drevo()
         {
             InitializeComponent();
@@ -134,24 +136,24 @@ namespace MosNaloga3
 
         private void shrani_Click(object sender, EventArgs e)
         {
-            int stevec = 0;
-            var test = new DataTable();
+           
+           // DataTable test = new DataTable(); 
             test.Columns.Add(" ");
-
-            for(int i = 0; i < glavni.otroci.Count; i++)
+            test.Columns[0].ReadOnly = true;
+            for (int i = 0; i < glavni.otroci.Count; i++)
             {
                 test.Columns.Add(glavni.otroci[i].ime.ToString());
                 test.Rows.Add(glavni.otroci[i].ime.ToString());
                 test.Rows[i][i+1] = 1;
                 stevec++;
-                test.Columns[i+1].ReadOnly = true;
+                
                 
             }
 
             
              // Metode.dopolni(test, stevec);
             podatki.DataSource = test;
-            Metode.preberi(test, stevec);
+            //Metode.preberi(test, stevec);
 
 
 
@@ -171,7 +173,7 @@ namespace MosNaloga3
 
         private void button3_Click_2(object sender, EventArgs e)
         {
-            
+            Metode.preberi(test, stevec);
         }
     }
 }

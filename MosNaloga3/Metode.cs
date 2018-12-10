@@ -27,22 +27,35 @@ namespace MosNaloga3
 
         public static List<double> preberi(DataTable x, int i)
         {
-                 List<double> y = new List<double>();
+                 List<double> y = new List<double>(i);
 
-                foreach (DataRow row in x.Rows)
+                for (int m =1;m<x.Rows.Count;m++)
                 {
-                    if (x.Rows.IndexOf(row) != 0)
-                    {
-                        //loop all the columns in the row
+                    
+                    
+                    
+                    double skupaj = 0;
+
+                        
                         for (int a = 1; a < x.Columns.Count; a++)
                         {
-                        //add the values for each cell to the total
-                         
-                            y[a+1] += Convert.ToDouble(row[x.Columns[a+1].ColumnName]);
-                        }
-                    }
+                        
+                       
+                         double v = Convert.ToDouble(x.Rows[m][a]);
+                         skupaj += v;
 
+                            if (a == x.Columns.Count-1)
+                            {
+                                skupaj = skupaj / a;
+                            }
+                        
+                         
+
+                        }
+                    y[m-1] = skupaj;
                 }
+
+                
         
 
 
