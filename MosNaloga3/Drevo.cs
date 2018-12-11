@@ -140,7 +140,7 @@ namespace MosNaloga3
             if (stevec == 0)
             {
                 test.Columns.Add(" ");
-                test.Columns[0].ReadOnly = true;
+                //test.Columns[0].ReadOnly = true;
                 for (int i = 0; i < glavni.otroci.Count; i++)
                 {
                     test.Columns.Add(glavni.otroci[i].ime.ToString());
@@ -156,12 +156,7 @@ namespace MosNaloga3
             
             else if (stevec == 1)
             {
-                for(int i = 0; i < glavni.otroci.Count; i++)
-                {
-                    Metode.napolnitabelo(glavni.otroci[i].otroci);
-                }
-                Metode.napolnitabelo();
-                stevec++;
+
             }
             
 
@@ -184,12 +179,38 @@ namespace MosNaloga3
         private void button3_Click_2(object sender, EventArgs e)
         {
             //Metode.preberi(test, stevec);
-            double[] m = Metode.preberi(test, stevec);
+            double[] m = Metode.preberi(test, glavni.otroci.Count);
 
             for(int i = 0; i < m.Length; i++)
             {
                 glavni.otroci[i].vrednost = m[i];
             }
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Metode.izbrisitabelo(test);
+            podatki.DataSource = null;
+            DataTable testerino = new DataTable();
+            //test.Columns.Add(" ");
+
+            testerino.Columns.Add(" ");
+            for (int i = 0; i < glavni.otroci.Count; i++)
+            {
+                for(int m=0; m < glavni.otroci[i].otroci.Count;m++)
+                {
+                    testerino.Columns.Add(glavni.otroci[i].otroci[m].ime.ToString());   
+                    testerino.Rows.Add(glavni.otroci[i].otroci[m].ime.ToString());
+                    
+                }
+                testerino.Rows[i][i + 1] = 1;
+
+
+            }
+            podatki.DataSource = testerino;
+            
         }
     }
 }

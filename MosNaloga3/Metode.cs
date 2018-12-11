@@ -72,6 +72,27 @@ namespace MosNaloga3
         {
             throw new NotImplementedException();
         }
+
+
+
+
+        public static void izbrisitabelo(DataTable table)
+        {
+            try
+            {
+                table.Clear();
+            }
+            catch (DataException e)
+            {
+                
+                Console.WriteLine("Napaka.", 
+                    e.GetType());
+            }
+
+        }
+
+
+
     }
 
 }

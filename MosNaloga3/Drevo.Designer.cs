@@ -36,7 +36,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.shrani = new System.Windows.Forms.Button();
             this.podatki = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dreva = new System.Windows.Forms.TreeView();
+            this.button4 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,8 +109,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.shrani);
             this.panel2.Controls.Add(this.podatki);
             this.panel2.Controls.Add(this.textBox2);
@@ -138,15 +138,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_2);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 491);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 22);
-            this.comboBox1.TabIndex = 19;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
             // shrani
             // 
             this.shrani.ForeColor = System.Drawing.Color.ForestGreen;
@@ -161,7 +152,7 @@
             // podatki
             // 
             this.podatki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.podatki.Location = new System.Drawing.Point(596, 161);
+            this.podatki.Location = new System.Drawing.Point(596, 34);
             this.podatki.Name = "podatki";
             this.podatki.RowTemplate.Height = 24;
             this.podatki.Size = new System.Drawing.Size(702, 406);
@@ -201,7 +192,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(311, 319);
+            this.label5.Location = new System.Drawing.Point(50, 418);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(194, 22);
             this.label5.TabIndex = 13;
@@ -265,6 +256,17 @@
             this.dreva.Size = new System.Drawing.Size(233, 355);
             this.dreva.TabIndex = 4;
             // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button4.Location = new System.Drawing.Point(315, 312);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(101, 23);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "naslednji nivo";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Drevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 14F);
@@ -312,8 +314,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView podatki;
         private System.Windows.Forms.Button shrani;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 
