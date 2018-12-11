@@ -23,6 +23,7 @@ namespace MosNaloga3
         int a = 0;
         int stevec = 0;
         DataTable test = new DataTable();
+        DataTable testerino = new DataTable();
 
         public Drevo()
         {
@@ -156,7 +157,15 @@ namespace MosNaloga3
             
             else if (stevec == 1)
             {
-
+                for (int a = 0; a < glavni.otroci.Count; a++)
+                {
+                    for (int b = 0; b < glavni.otroci[a].otroci.Count; b++)
+                    {
+                        double[] m = Metode.preberi(testerino, glavni.otroci[a].otroci.Count);
+                        glavni.otroci[a].otroci[a].vrednost = m[a];
+                        MessageBox.Show(glavni.otroci[a].otroci[b].vrednost.ToString());
+                    }
+                }
             }
             
 
@@ -184,32 +193,39 @@ namespace MosNaloga3
             for(int i = 0; i < m.Length; i++)
             {
                 glavni.otroci[i].vrednost = m[i];
+                MessageBox.Show(glavni.otroci[i].vrednost.ToString());
             }
-
+            
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             Metode.izbrisitabelo(test);
             podatki.DataSource = null;
-            DataTable testerino = new DataTable();
+            //DataTable testerino = new DataTable();
             //test.Columns.Add(" ");
-
+            int f = -1;
             testerino.Columns.Add(" ");
             for (int i = 0; i < glavni.otroci.Count; i++)
             {
-                for(int m=0; m < glavni.otroci[i].otroci.Count;m++)
+                
+                for (int m=0; m < glavni.otroci[i].otroci.Count;m++)
                 {
                     testerino.Columns.Add(glavni.otroci[i].otroci[m].ime.ToString());   
                     testerino.Rows.Add(glavni.otroci[i].otroci[m].ime.ToString());
-                    
+                    f++;
+                    testerino.Rows[f][f + 1] = 1;
                 }
-                testerino.Rows[i][i + 1] = 1;
+                //testerino.Rows[f][f + 1] = 1;
 
 
             }
             podatki.DataSource = testerino;
+
+  
+            
             
         }
     }

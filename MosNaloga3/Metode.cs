@@ -43,7 +43,7 @@ namespace MosNaloga3
                         for (int a = 1; a < x.Columns.Count; a++)
                         {
                         
-                       
+                           
                          double v = Convert.ToDouble(x.Rows[a-1][m]);
                          skupaj += v;
 

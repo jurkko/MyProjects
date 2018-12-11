@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.shrani = new System.Windows.Forms.Button();
             this.podatki = new System.Windows.Forms.DataGridView();
@@ -48,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dreva = new System.Windows.Forms.TreeView();
-            this.button4 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -128,13 +128,24 @@
             this.panel2.Size = new System.Drawing.Size(1310, 629);
             this.panel2.TabIndex = 4;
             // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button4.Location = new System.Drawing.Point(315, 326);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 23);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "3. naslednji nivo";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(447, 268);
+            this.button3.Location = new System.Drawing.Point(315, 297);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 23);
             this.button3.TabIndex = 20;
-            this.button3.Text = "izračun";
+            this.button3.Text = "2. izračun";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_2);
             // 
@@ -143,9 +154,9 @@
             this.shrani.ForeColor = System.Drawing.Color.ForestGreen;
             this.shrani.Location = new System.Drawing.Point(315, 268);
             this.shrani.Name = "shrani";
-            this.shrani.Size = new System.Drawing.Size(101, 23);
+            this.shrani.Size = new System.Drawing.Size(106, 23);
             this.shrani.TabIndex = 18;
-            this.shrani.Text = "generiraj tabelo";
+            this.shrani.Text = "1. generiraj tabelo";
             this.shrani.UseVisualStyleBackColor = true;
             this.shrani.Click += new System.EventHandler(this.shrani_Click);
             // 
@@ -255,17 +266,6 @@
             this.dreva.Name = "dreva";
             this.dreva.Size = new System.Drawing.Size(233, 355);
             this.dreva.TabIndex = 4;
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button4.Location = new System.Drawing.Point(315, 312);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "naslednji nivo";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Drevo
             // 
