@@ -157,14 +157,31 @@ namespace MosNaloga3
             
             else if (stevec == 1)
             {
+                int skupajotrok = 0;
+                for(int u = 0; u < glavni.otroci.Count; u++)
+                {
+                    skupajotrok += glavni.otroci[a].otroci.Count;
+                }
+
+
+                podatki.DataSource = testerino;
                 for (int a = 0; a < glavni.otroci.Count; a++)
                 {
-                    for (int b = 0; b < glavni.otroci[a].otroci.Count; b++)
-                    {
-                        double[] m = Metode.preberi(testerino, glavni.otroci[a].otroci.Count);
-                        glavni.otroci[a].otroci[a].vrednost = m[a];
-                        MessageBox.Show(glavni.otroci[a].otroci[b].vrednost.ToString());
-                    }
+                    
+                    
+                    double[] m = Metode.preberi(testerino, skupajotrok);
+
+
+                        for(int i = 0; i < glavni.otroci[a].otroci.Count; i++)
+                        {
+                            glavni.otroci[a].otroci[i].vrednost = m[i];
+                            MessageBox.Show(m[i].ToString());
+                            //MessageBox.Show()
+                        }
+                        
+                        
+                        
+                    
                 }
             }
             

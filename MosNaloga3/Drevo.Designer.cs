@@ -131,7 +131,7 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button4.Location = new System.Drawing.Point(315, 326);
+            this.button4.Location = new System.Drawing.Point(315, 356);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(106, 23);
             this.button4.TabIndex = 21;
@@ -141,7 +141,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(315, 297);
+            this.button3.Location = new System.Drawing.Point(315, 327);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 23);
             this.button3.TabIndex = 20;
