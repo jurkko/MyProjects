@@ -19,11 +19,16 @@ namespace MosNaloga3
         
         List <Stars> vozlisca = new List<Stars>();
         List <Stars> starsi = new List <Stars>();
+        List<Alternativa> alternative = new List<Alternativa>();
+
         Stars glavni = new Stars(null,0);
         int a = 0;
         int stevec = 0;
         DataTable test = new DataTable();
         DataTable testerino = new DataTable();
+
+
+        
 
         public Drevo()
         {
@@ -165,25 +170,33 @@ namespace MosNaloga3
 
 
                 podatki.DataSource = testerino;
+                double[] m = Metode.preberi(testerino, skupajotrok);
+
+                int test = 0;
                 for (int a = 0; a < glavni.otroci.Count; a++)
                 {
                     
                     
-                    double[] m = Metode.preberi(testerino, skupajotrok);
+                    //double[] m = Metode.preberi(testerino, skupajotrok);
 
-
+                        
                         for(int i = 0; i < glavni.otroci[a].otroci.Count; i++)
                         {
-                            glavni.otroci[a].otroci[i].vrednost = m[i];
-                            MessageBox.Show(m[i].ToString());
-                            //MessageBox.Show()
+                            glavni.otroci[a].otroci[i].vrednost = m[test + i];
+                            MessageBox.Show(m[test+i].ToString());
+                        
+                        test += glavni.otroci[a].otroci.Count;
                         }
                         
-                        
+                       
                         
                     
                 }
+
+                
+
             }
+           
             
 
 
@@ -244,6 +257,22 @@ namespace MosNaloga3
   
             
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            Alternativa nova = new Alternativa(textBox3.Text );
+            alternative.Add(nova);
         }
     }
 }
