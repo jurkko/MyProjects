@@ -10,6 +10,7 @@ namespace MosNaloga3
     {
         public string ime;
         public List<double> vrednosti = new List<double>();
+        
 
         public Alternativa(string ime, List<double> vrednosti)
         {

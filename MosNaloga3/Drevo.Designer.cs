@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -56,7 +57,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dreva = new System.Windows.Forms.TreeView();
-            this.label8 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -117,6 +118,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.label7);
@@ -143,6 +145,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1310, 716);
             this.panel2.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(325, 502);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 16);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "izberi kriterij";
             // 
             // button6
             // 
@@ -215,7 +228,7 @@
             this.Končaj.ForeColor = System.Drawing.Color.White;
             this.Končaj.Location = new System.Drawing.Point(315, 394);
             this.Končaj.Name = "Končaj";
-            this.Končaj.Size = new System.Drawing.Size(186, 46);
+            this.Končaj.Size = new System.Drawing.Size(169, 35);
             this.Končaj.TabIndex = 22;
             this.Končaj.Text = "končaj";
             this.Končaj.UseVisualStyleBackColor = false;
@@ -370,16 +383,19 @@
             this.dreva.Size = new System.Drawing.Size(233, 355);
             this.dreva.TabIndex = 4;
             // 
-            // label8
+            // button8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(325, 502);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 16);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "izberi kriterij";
+            this.button8.BackColor = System.Drawing.Color.SeaGreen;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(315, 562);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(169, 35);
+            this.button8.TabIndex = 31;
+            this.button8.Text = "izračunaj";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Drevo
             // 
@@ -438,6 +454,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button8;
     }
 }
 

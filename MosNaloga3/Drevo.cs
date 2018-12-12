@@ -25,6 +25,7 @@ namespace MosNaloga3
 
         Vozlisce glavni = new Vozlisce(null,0);
         int a = 0;
+        
         int stevec = 0;
         DataTable test = new DataTable();
         DataTable testerino = new DataTable();
@@ -222,6 +223,10 @@ namespace MosNaloga3
         private void button3_Click_2(object sender, EventArgs e)
         {
             //Metode.preberi(test, stevec);
+            //Metode.dopolni(test);
+            MessageBox.Show("nekaj");
+            podatki.DataSource = test;
+
             double[] m = Metode.preberi(test, glavni.otroci.Count);
 
             for(int i = 0; i < m.Length; i++)
@@ -297,8 +302,8 @@ namespace MosNaloga3
 
             //napolni listbox + dodaj v List alternativ
             listBox1.Items.Clear();
-            List<double> vrednost = new List<double>();
-            Alternativa nova = new Alternativa(textBox3.Text, vrednost);
+            List<double> vrednosti = new List<double>(alternative.Count);
+            Alternativa nova = new Alternativa(textBox3.Text, vrednosti);
             alternative.Add(nova);
             
 
@@ -325,16 +330,23 @@ namespace MosNaloga3
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Metode.izbrisitabelo(zadnja);
+
+
+
+            //Metode.izbrisitabelo(zadnja);
+            //zadnja.Reset();
+            zadnja.Rows.Clear();
+            zadnja.Columns.Clear();
+            zadnja.Columns.Add(" ");
             MessageBox.Show(otroci[comboBox1.SelectedIndex].ime.ToString());
 
-            zadnja.Columns.Add(" ");
+            
            
             int f = -1;
-                for (int i = 0; i < alternative.Count; i++)
+                for (int o = 0; o < alternative.Count; o++)
                 {
-                    zadnja.Columns.Add(alternative[i].ime.ToString());
-                    zadnja.Rows.Add(alternative[i].ime.ToString());
+                    zadnja.Columns.Add(alternative[o].ime.ToString());
+                    zadnja.Rows.Add(alternative[o].ime.ToString());
                     f++;
                     zadnja.Rows[f][f+1] = 1;
 
@@ -342,7 +354,26 @@ namespace MosNaloga3
 
                 }
                 podatki.DataSource = zadnja;
+
             
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            double [] rezultati = Metode.preberi(zadnja, alternative.Count);
+            
+            for(int z = 0; z < rezultati.Length; z++)
+            {
+                double a = rezultati[z];
+                MessageBox.Show(alternative[z].ime.ToString());
+                //MessageBox.Show(alternative[z].);
+               // alternative[z].vrednosti[0] = a;
+            }
         }
     }
 }

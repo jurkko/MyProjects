@@ -12,14 +12,17 @@ namespace MosNaloga3
     {
 
 
-        public static DataTable dopolni(DataTable x, int i)
+        public static DataTable dopolni(DataTable x)
         {
             DataTable nova = new DataTable();
 
-            int meja = 5;
-            for (int a = 0; a < 5; a++)
+            
+            for (int a = 1; a <= x.Rows.Count; a++)
             {
-
+                for(int b = 1; b <= x.Columns.Count; b++)
+                {
+                    
+                }
             }
 
             return nova;
@@ -80,6 +83,7 @@ namespace MosNaloga3
         {
             try
             {
+                table.Reset();
                 table.Clear();
             }
             catch (DataException e)
