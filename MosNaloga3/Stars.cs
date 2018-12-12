@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace MosNaloga3
 {
-    class Stars
+    class Vozlisce
     {
         public string ime;
         public double vrednost;
-        public List<Stars> otroci = new List<Stars>();
+        public List<Vozlisce> otroci = new List<Vozlisce>();
 
-        public Stars(string ime, double vrednost)
+        public Vozlisce(string ime, double vrednost)
         {
             this.ime = ime;
             this.vrednost = vrednost;

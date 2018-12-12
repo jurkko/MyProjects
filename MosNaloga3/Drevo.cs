@@ -16,17 +16,19 @@ namespace MosNaloga3
     
     public partial class Drevo : Form
     {
-        
-        List <Stars> vozlisca = new List<Stars>();
-        List <Stars> starsi = new List <Stars>();
+        List<Vozlisce> starsi = new List<Vozlisce>();
+        List<Vozlisce> vozlisca = new List<Vozlisce>();
+        List<Vozlisce> otroci = new List<Vozlisce>();
+
         List<Alternativa> alternative = new List<Alternativa>();
 
-        Stars glavni = new Stars(null,0);
+
+        Vozlisce glavni = new Vozlisce(null,0);
         int a = 0;
         int stevec = 0;
         DataTable test = new DataTable();
         DataTable testerino = new DataTable();
-
+        DataTable zadnja = new DataTable();
 
         
 
@@ -109,7 +111,7 @@ namespace MosNaloga3
 
         private void button2_Click_2(object sender, EventArgs e)
         {
-            Stars vozlisce = new Stars(textBox2.Text,0);
+            Vozlisce vozlisce = new Vozlisce(textBox2.Text,0);
             
             dreva.SelectedNode.Nodes.Add(vozlisce.ime.ToString());
 
@@ -121,13 +123,15 @@ namespace MosNaloga3
             {
                 int a =dreva.SelectedNode.Index;
                 glavni.otroci[a].otroci.Add(vozlisce);
-                
+                vozlisca.Add(vozlisce);
+
             }
             else
             {
                 int b = dreva.SelectedNode.Index;
                 int c =dreva.SelectedNode.Parent.Index;
                 glavni.otroci[c].otroci[b].otroci.Add(vozlisce);
+                
               
             }
             dreva.ExpandAll();
@@ -261,7 +265,26 @@ namespace MosNaloga3
 
         private void button5_Click(object sender, EventArgs e)
         {
+            for (int z = 0; z < vozlisca.Count; z++)
+            {
+                if (vozlisca[z].otroci.Count == 0)
+                {
+                    otroci.Add(vozlisca[z]);
+                }
+            }
 
+            MessageBox.Show(otroci[0].ime.ToString());
+            MessageBox.Show(otroci[1].ime.ToString());
+
+
+            for (int i = 0; i < otroci.Count; ++i)
+            {
+                if (!comboBox1.Items.Contains(otroci[i]))
+                {
+                    comboBox1.Items.Add(otroci[i].ime.ToString());
+                }
+            }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -271,8 +294,55 @@ namespace MosNaloga3
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            Alternativa nova = new Alternativa(textBox3.Text );
+
+            //napolni listbox + dodaj v List alternativ
+            listBox1.Items.Clear();
+            List<double> vrednost = new List<double>();
+            Alternativa nova = new Alternativa(textBox3.Text, vrednost);
             alternative.Add(nova);
+            
+
+            for (int i = 0; i < alternative.Count; ++i)
+            {
+                if (!listBox1.Items.Contains(nova))
+                {
+                    listBox1.Items.Add(alternative[i].ime.ToString());
+                }
+            }
+            
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Metode.izbrisitabelo(zadnja);
+            MessageBox.Show(otroci[comboBox1.SelectedIndex].ime.ToString());
+
+            zadnja.Columns.Add(" ");
+           
+            int f = -1;
+                for (int i = 0; i < alternative.Count; i++)
+                {
+                    zadnja.Columns.Add(alternative[i].ime.ToString());
+                    zadnja.Rows.Add(alternative[i].ime.ToString());
+                    f++;
+                    zadnja.Rows[f][f+1] = 1;
+
+
+
+                }
+                podatki.DataSource = zadnja;
+            
         }
     }
 }
