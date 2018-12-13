@@ -9,13 +9,13 @@ namespace MosNaloga3
     class Alternativa
     {
         public string ime;
-        public List<double> vrednosti = new List<double>();
+        public double vrednost;
         
 
-        public Alternativa(string ime, List<double> vrednosti)
+        public Alternativa(string ime, double vrednost)
         {
             this.ime = ime;
-            this.vrednosti = vrednosti;
+            this.vrednost = vrednost;
         }
     }
 }

@@ -19,9 +19,12 @@ namespace MosNaloga3
         List<Vozlisce> starsi = new List<Vozlisce>();
         List<Vozlisce> vozlisca = new List<Vozlisce>();
         List<Vozlisce> otroci = new List<Vozlisce>();
+        List<double[]> vmesnirezultati = new List<double[]>();
+        //ArrayList rezultati = new ArrayList();
 
         List<Alternativa> alternative = new List<Alternativa>();
 
+       
 
         Vozlisce glavni = new Vozlisce(null,0);
         int a = 0;
@@ -224,6 +227,7 @@ namespace MosNaloga3
         {
             //Metode.preberi(test, stevec);
             //Metode.dopolni(test);
+            //Metode.dopolni(test);
             MessageBox.Show("nekaj");
             podatki.DataSource = test;
 
@@ -302,7 +306,8 @@ namespace MosNaloga3
 
             //napolni listbox + dodaj v List alternativ
             listBox1.Items.Clear();
-            List<double> vrednosti = new List<double>(alternative.Count);
+            //List<double> vrednosti = new List<double>(alternative.Count);
+            double vrednosti = 0;
             Alternativa nova = new Alternativa(textBox3.Text, vrednosti);
             alternative.Add(nova);
             
@@ -365,15 +370,72 @@ namespace MosNaloga3
 
         private void button8_Click(object sender, EventArgs e)
         {
-            double [] rezultati = Metode.preberi(zadnja, alternative.Count);
-            
-            for(int z = 0; z < rezultati.Length; z++)
+            double [] rezultati2 = Metode.preberi(zadnja, alternative.Count);
+            vmesnirezultati.Add(rezultati2);
+            /*
+            for(int z = 0; z < rezultati2.Length; z++)
             {
-                double a = rezultati[z];
-                MessageBox.Show(alternative[z].ime.ToString());
-                //MessageBox.Show(alternative[z].);
-               // alternative[z].vrednosti[0] = a;
+
+
+                rezultati[z] = rezultati2[z];
+                
+
             }
+            */
+            
+            
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            for(int i = 0; i < otroci.Count; i++)
+            {
+                double k = 0;
+                double rezultat = 0; 
+                rezultat = glavni.otroci[i].vrednost;
+                for(int z = 0; z < glavni.otroci[i].otroci.Count; z++)
+                {
+                    
+                     k =+ glavni.otroci[i].otroci[z].vrednost*vmesnirezultati[i][z];
+                }
+
+                rezultat = rezultat * k;
+                alternative[i].vrednost = rezultat;
+                MessageBox.Show(alternative[i].vrednost.ToString());
+            }
+
+            
+
+
+            int index = 0;
+            for (int g = 0; g < alternative.Count; g++)
+            {
+                
+                double trenutna = 0;
+                double vrednost = alternative[g].vrednost;
+                
+                if (vrednost>trenutna)
+                {
+                    trenutna = vrednost;
+                    index++;
+                }
+
+                
+            }
+
+            MessageBox.Show("najboljša alternativa je " + alternative[index-1].ime.ToString());
+
+            for(int mm = 0; mm < alternative.Count; mm++)
+            {
+                chart1.Series["Vrednosti"].Points.AddXY(alternative[mm].ime.ToString(),alternative[mm].vrednost);
+            }
+
+                
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
