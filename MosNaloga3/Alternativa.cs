@@ -17,5 +17,11 @@ namespace MosNaloga3
             this.ime = ime;
             this.vrednost = vrednost;
         }
+
+        public override string ToString()
+        {
+            return "ime: " + ime + " vrednost: " + vrednost;
+        }
+
     }
 }

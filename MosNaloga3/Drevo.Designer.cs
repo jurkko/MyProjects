@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,12 +63,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dreva = new System.Windows.Forms.TreeView();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button9 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.podatki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.podatki)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -124,6 +125,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.chart1);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button8);
@@ -154,15 +156,32 @@
             this.panel2.Size = new System.Drawing.Size(1310, 716);
             this.panel2.TabIndex = 4;
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(772, 467);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Vrednosti";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(240, 223);
+            this.chart1.TabIndex = 33;
+            this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Red;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(596, 521);
+            this.button7.Location = new System.Drawing.Point(341, 651);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 76);
+            this.button7.Size = new System.Drawing.Size(108, 39);
             this.button7.TabIndex = 32;
             this.button7.Text = "končaj";
             this.button7.UseVisualStyleBackColor = false;
@@ -419,22 +438,19 @@
             this.dreva.Size = new System.Drawing.Size(233, 355);
             this.dreva.TabIndex = 4;
             // 
-            // chart1
+            // button9
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(909, 446);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Vrednosti";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(240, 223);
-            this.chart1.TabIndex = 33;
-            this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            this.button9.BackColor = System.Drawing.Color.ForestGreen;
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ForeColor = System.Drawing.Color.Honeydew;
+            this.button9.Location = new System.Drawing.Point(1109, 640);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(74, 43);
+            this.button9.TabIndex = 34;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Drevo
             // 
@@ -458,8 +474,8 @@
             this.flowLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.podatki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.podatki)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -497,6 +513,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button button9;
     }
 }
 

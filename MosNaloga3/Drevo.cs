@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace MosNaloga3
 
@@ -436,6 +440,64 @@ namespace MosNaloga3
         private void chart1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+
+            //Shrani graf
+            SaveFileDialog saveChart = new SaveFileDialog();
+            saveChart.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            saveChart.Title = "shrani graf";
+            saveChart.ShowDialog();
+            if(saveChart.FileName != "")
+            {
+                System.IO.FileStream fs = (System.IO.FileStream)saveChart.OpenFile();
+                this.chart1.SaveImage(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+                string path = System.IO.Path.GetFullPath(saveChart.FileName);
+                MessageBox.Show(" graf uspešno shranjen na mesto " + path);
+            }
+
+          
+
+
+
+            //shrani alternative
+            using (TextWriter tw = new StreamWriter("Alternative.txt"))
+            {
+                foreach (Alternativa nova  in alternative)
+                {
+                    tw.WriteLine(nova);
+                }
+                tw.Close();
+            }
+
+
+            //serializiraj drevo
+            StringBuilder sb = new StringBuilder();
+
+            foreach (TreeNode node in dreva.Nodes)
+            {
+                sb.AppendLine(node.Name);
+            }
+
+
+            SaveFileDialog saveList = new SaveFileDialog();
+
+            saveList.DefaultExt = "*.mvia";
+            saveList.Filter = "MVIA Files|*.mvia";
+
+            if (saveList.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveList.FileName, sb.ToString());
+            }
+
+
+            
+           
+
+           
         }
     }
 }
