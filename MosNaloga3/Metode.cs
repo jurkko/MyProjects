@@ -57,35 +57,33 @@ namespace MosNaloga3
                         for (int a = 1; a < x.Columns.Count; a++)
                         {
 
-                         //double Myvalue = double.Parse(x.Rows[m][a].ToString());
-
-                         //double v = double.Parse(x.Rows[a - 1][m]); 
+                        
                          double v =Convert.ToDouble(x.Rows[a-1][m]);
                          double pomozna = 0;
                          
 
-                         for(int z = 1; z < x.Columns.Count; z++)
-                         {
-                          pomozna += Convert.ToDouble(x.Rows[z-1][a]);
+                             for(int z = 1; z < x.Columns.Count; z++)
+                             {
+                              pomozna += Convert.ToDouble(x.Rows[z-1][a]);
 
-                         }
+                             }
 
                         double prava = v / pomozna;
-                        //double prava = Myvalue / pomozna;
-                         skupaj += prava;
+                        skupaj += prava;
 
-                        if (a+1 == x.Columns.Count)
-                                {
-                                    skupaj = skupaj / a;
-                                }
+
+                            if (a+1 == x.Columns.Count)
+                            {
+                                  skupaj = skupaj / a;
+                            }
                         
                          
 
-                            }
+                        }
                     
                         y[stevec] = skupaj;
                         stevec++;
-                }
+            }
 
                 
         

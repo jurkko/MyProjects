@@ -173,7 +173,7 @@ namespace MosNaloga3
                 int skupajotrok = 0;
                 for(int u = 0; u < glavni.otroci.Count; u++)
                 {
-                    skupajotrok += glavni.otroci[a].otroci.Count;
+                    skupajotrok++;
                 }
 
 
@@ -388,7 +388,7 @@ namespace MosNaloga3
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            for(int i = 0; i < otroci.Count; i++)
+            for(int i = 0; i < alternative.Count; i++)
             {
                 double k = 0;
                 double rezultat = 0; 
