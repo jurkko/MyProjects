@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Drevo));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -63,7 +64,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dreva = new System.Windows.Forms.TreeView();
-            this.button9 = new System.Windows.Forms.Button();
+            this.dopolni = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -125,6 +126,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dopolni);
             this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.chart1);
             this.panel2.Controls.Add(this.button7);
@@ -156,18 +158,32 @@
             this.panel2.Size = new System.Drawing.Size(1310, 716);
             this.panel2.TabIndex = 4;
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.ForestGreen;
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ForeColor = System.Drawing.Color.Honeydew;
+            this.button9.Location = new System.Drawing.Point(1109, 640);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(74, 43);
+            this.button9.TabIndex = 34;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(772, 467);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Vrednosti";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Vrednosti";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(240, 223);
             this.chart1.TabIndex = 33;
             this.chart1.Text = "chart1";
@@ -281,7 +297,7 @@
             this.Končaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Končaj.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Končaj.ForeColor = System.Drawing.Color.White;
-            this.Končaj.Location = new System.Drawing.Point(315, 394);
+            this.Končaj.Location = new System.Drawing.Point(315, 429);
             this.Končaj.Name = "Končaj";
             this.Končaj.Size = new System.Drawing.Size(169, 35);
             this.Končaj.TabIndex = 22;
@@ -294,7 +310,7 @@
             this.button4.BackColor = System.Drawing.Color.Red;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(315, 347);
+            this.button4.Location = new System.Drawing.Point(315, 381);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(106, 32);
             this.button4.TabIndex = 21;
@@ -307,7 +323,7 @@
             this.button3.BackColor = System.Drawing.Color.Orange;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(315, 312);
+            this.button3.Location = new System.Drawing.Point(315, 346);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 29);
             this.button3.TabIndex = 20;
@@ -438,19 +454,15 @@
             this.dreva.Size = new System.Drawing.Size(233, 355);
             this.dreva.TabIndex = 4;
             // 
-            // button9
+            // dopolni
             // 
-            this.button9.BackColor = System.Drawing.Color.ForestGreen;
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.Honeydew;
-            this.button9.Location = new System.Drawing.Point(1109, 640);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(74, 43);
-            this.button9.TabIndex = 34;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.dopolni.Location = new System.Drawing.Point(315, 312);
+            this.dopolni.Name = "dopolni";
+            this.dopolni.Size = new System.Drawing.Size(106, 28);
+            this.dopolni.TabIndex = 35;
+            this.dopolni.Text = "1.1 dopolni";
+            this.dopolni.UseVisualStyleBackColor = true;
+            this.dopolni.Click += new System.EventHandler(this.dopolni_Click);
             // 
             // Drevo
             // 
@@ -514,6 +526,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button dopolni;
     }
 }
 

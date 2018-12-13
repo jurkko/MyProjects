@@ -26,9 +26,22 @@ namespace MosNaloga3
                 
                 for (int a = 1; a < x.Columns.Count; a++)
                 {
-                    if (x.Rows[m-1][a].ToString()!=null)
+                    if (x.Rows[a-1][m].ToString()=="")
                     {
-                        MessageBox.Show(x.Rows[m][a].ToString());
+                       double v= Convert.ToDouble(x.Rows[m - 1][a]);
+
+                        if (v > 1)
+                        {
+                           v = 1 / v;
+                            
+                        } else
+                        {
+                            
+                        }
+
+                        x.Rows[a - 1][m] = v;// x.Rows[m-1][a];
+                        //x.Rows[m][a-1];
+                        MessageBox.Show(x.Rows[m][a-1].ToString());
                     }
                 }
 
@@ -57,10 +70,11 @@ namespace MosNaloga3
                         for (int a = 1; a < x.Columns.Count; a++)
                         {
 
-                        
-                         double v =Convert.ToDouble(x.Rows[a-1][m]);
+                         int g = m-1;
+                         double v =Convert.ToDouble(x.Rows[g][a]);
                          double pomozna = 0;
-                         
+                         g++;
+
 
                              for(int z = 1; z < x.Columns.Count; z++)
                              {
@@ -68,8 +82,12 @@ namespace MosNaloga3
 
                              }
 
-                        double prava = v / pomozna;
-                        skupaj += prava;
+
+
+                            double prava = v / pomozna;
+                            skupaj += prava;
+
+
 
 
                             if (a+1 == x.Columns.Count)

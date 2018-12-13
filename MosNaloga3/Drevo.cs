@@ -231,8 +231,8 @@ namespace MosNaloga3
         {
             //Metode.preberi(test, stevec);
             //Metode.dopolni(test);
-            //Metode.dopolni(test);
-            MessageBox.Show("nekaj");
+            
+            
             podatki.DataSource = test;
 
             double[] m = Metode.preberi(test, glavni.otroci.Count);
@@ -498,6 +498,12 @@ namespace MosNaloga3
            
 
            
+        }
+
+        private void dopolni_Click(object sender, EventArgs e)
+        {
+            Metode.dopolni(test);
+            podatki.DataSource = test;
         }
     }
 }
