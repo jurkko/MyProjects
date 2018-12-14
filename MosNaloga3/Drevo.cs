@@ -32,7 +32,8 @@ namespace MosNaloga3
 
         Vozlisce glavni = new Vozlisce(null,0);
         int a = 0;
-        
+        int count = 0;
+
         int stevec = 0;
         DataTable test = new DataTable();
         DataTable testerino = new DataTable();
@@ -280,14 +281,25 @@ namespace MosNaloga3
         {
             for (int z = 0; z < vozlisca.Count; z++)
             {
+                
                 if (vozlisca[z].otroci.Count == 0)
                 {
                     otroci.Add(vozlisca[z]);
                 }
             }
 
+            for(int tt = 0; tt < glavni.otroci.Count; tt++)
+            {
+                if (glavni.otroci[tt].otroci.Count==0)
+                {
+                    otroci.Add(glavni.otroci[tt]);
+                }
+            }
+           
+
             MessageBox.Show(otroci[0].ime.ToString());
             MessageBox.Show(otroci[1].ime.ToString());
+            MessageBox.Show(otroci.Count.ToString());
 
 
             for (int i = 0; i < otroci.Count; ++i)
@@ -392,25 +404,40 @@ namespace MosNaloga3
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            for(int i = 0; i < alternative.Count; i++)
+            int stevecalt = 0;
+
+            for(int i = 0; i < glavni.otroci.Count; i++)
             {
                 double k = 0;
                 double rezultat = 0; 
+
                 rezultat = glavni.otroci[i].vrednost;
                 for(int z = 0; z < glavni.otroci[i].otroci.Count; z++)
                 {
                     
-                     k =+ glavni.otroci[i].otroci[z].vrednost*vmesnirezultati[i][z];
+                     //k =+ glavni.otroci[i].otroci[z].vrednost*vmesnirezultati[i][z];
+                       k =+ glavni.otroci[i].otroci[z].vrednost * vmesnirezultati[z][i];
                 }
 
-                rezultat = rezultat * k;
-                alternative[i].vrednost = rezultat;
-                MessageBox.Show(alternative[i].vrednost.ToString());
+                rezultat = rezultat + k;
+
+               
+                alternative[stevecalt].vrednost= rezultat;
+                
+                //alternative[i].vrednost = rezultat;
+                MessageBox.Show(alternative[stevecalt].vrednost.ToString());
+                stevecalt++;
+
             }
 
-            
+
+            for (int mm = 0; mm < alternative.Count; mm++)
+            {
+                chart1.Series["Vrednosti"].Points.AddXY(alternative[mm].ime.ToString(), alternative[mm].vrednost);
+            }
 
 
+            /*
             int index = 0;
             for (int g = 0; g < alternative.Count; g++)
             {
@@ -427,12 +454,9 @@ namespace MosNaloga3
                 
             }
 
-            MessageBox.Show("najboljša alternativa je " + alternative[index-1].ime.ToString());
-
-            for(int mm = 0; mm < alternative.Count; mm++)
-            {
-                chart1.Series["Vrednosti"].Points.AddXY(alternative[mm].ime.ToString(),alternative[mm].vrednost);
-            }
+            MessageBox.Show("najboljša alternativa je " + alternative[index].ime.ToString());
+            */
+          
 
                 
         }
@@ -502,8 +526,19 @@ namespace MosNaloga3
 
         private void dopolni_Click(object sender, EventArgs e)
         {
-            Metode.dopolni(test);
-            podatki.DataSource = test;
-        }
+            
+
+            if (count == 0)
+            {
+                Metode.dopolni(test);
+                podatki.DataSource = test;
+                count++;
+            }
+            else
+            {
+                Metode.dopolni(testerino);
+                podatki.DataSource = testerino;
+            }
+        }   
     }
 }
